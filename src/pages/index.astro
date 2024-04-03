@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Menu from "../components/Menu.astro";
+import Bienvenida from "../components/Bienvenida.astro";
+import Servicios from "../components/servicios.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Hernan Masajes | masajes en salta, Argentina">
+	<main>
+		
+			<div>
+				<div class="princi h-[560px] mt-1">
+					<div class="bgblur flex justify-center">
+						<img src="/src/img/logo.png" alt="logo" srcset="" />
+					</div>
+				</div>
+				<Menu />
+				<Bienvenida />
+				<Servicios />
+
+				<Footer />
+			</div>
+	</main>
+</Layout>
+
+<style>
+	.princi {
+		background-image: url("../img/fondo.jpeg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	.bgblur {
+		background-color: #00000042;
+		backdrop-filter: blur(8px);
+		height: 100%;
+		align-items: center;
+	}
+</style>

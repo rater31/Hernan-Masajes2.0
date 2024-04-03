@@ -1,0 +1,28 @@
+---
+import type { ListaMasaje } from "../lib/masajes";
+
+interface Props {
+    listamasajes:ListaMasaje;
+}
+
+const {listamasajes} = Astro.props
+
+const {id, tipo, title, contenido, fondo} =listamasajes
+const fotito=`url(/src/img/${fondo})`;
+console.log({fondo})
+---
+<div class="foto w-[60%] m-auto " style={{backgroundImage:`${fotito}`}}>
+    <div class ="text-center text-white m-auto mt-5    w-[100%]">
+        <h2>{title}</h2>
+        <p class="text-start ms-16">Que ofrece este servicio: <br>{contenido}</p>
+    </div>
+</div>
+
+<style>
+.foto{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px
+}
+</style>
