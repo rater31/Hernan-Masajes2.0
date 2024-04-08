@@ -1,0 +1,25 @@
+---
+import type { ContenidoMasajes } from "../lib/contenido-masajes";
+
+
+interface Props {
+    contenidomasaje:ContenidoMasajes;
+
+}
+const {contenidomasaje} = Astro.props
+const {title,tipo,contenido} =contenidomasaje
+
+
+
+---
+
+
+<div>
+    <h2>{title}</h2>
+    <p>el tipo es : {tipo}</p>
+    <p>{contenido}</p>
+
+</div>
+
+
+
