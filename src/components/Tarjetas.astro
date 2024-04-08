@@ -1,21 +1,31 @@
 ---
-import type { ListaMasaje } from "../lib/masajes";
+import type { ListaMasaje } from "../lib/masajes"
+// import  {contenidomasaje} from "../lib/contenido-masajes"
+// import ContenidoTarjeta from "../components/ContenidoTarjeta.astro"
 
 interface Props {
     listamasajes:ListaMasaje;
+    // contenidomasaje:ContenidoMasajes;
+
 }
-
 const {listamasajes} = Astro.props
-
-const {id, tipo, title, contenido, fondo} =listamasajes
+const {title,especificaciones,contenido1,contenido2,contenido3,descripcion1,descripcion2,descripcion3,fondo} =listamasajes
+// const {allTipo,tipo}=contenidomasaje
 const fotito=`url(/src/img/${fondo})`;
-console.log({fondo})
+
+// const tt = allTipo.find(tipo =>)
 ---
 <div class="foto w-[60%] m-auto " style={{backgroundImage:`${fotito}`}}>
-    <div class ="text-center text-white m-auto mt-5    w-[100%]">
-        <h2>{title}</h2>
-        <p class="text-start ms-16">Que ofrece este servicio: <br>{contenido}</p>
-    </div>
+    <div class ="text-center text-white m-auto mt-5  negri  w-[100%]">
+        <h2 class="text-start font-bold text-xl bg-slate-500/70 pb-1">{title}</h2>
+        <p class="text-gap">{especificaciones}</p>
+        <button id="btn" class="btn-per">{contenido1}</button>
+        <p>{descripcion1}</p>
+        <button id="btn" class="btn-per">{contenido2}</button>
+        <p>{descripcion2}</p>
+        <button id="btn" class="btn-per">{contenido3}</button>
+        <p class="pb-3">{descripcion3}</p>
+    </div>      
 </div>
 
 <style>
@@ -25,4 +35,20 @@ console.log({fondo})
     background-position: center;
     border-radius: 5px
 }
+.negri{
+    background-color: rgba(0, 0, 0, 0.438);
+}
+.btn-per{
+    width: 60%;
+    border-radius: 15px;
+    border:1px solid;
+}
 </style>
+<script>
+const btn =document.getElementById("btn")
+
+if(document.getElementById("btn")?.innerHTML === '' ){
+    btn?.classList.remove("btn-per")
+}
+console.log(btn)
+</script>
