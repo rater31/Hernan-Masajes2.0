@@ -22,7 +22,7 @@ const fotito=`url(/src/img/${fondo})`;
         
         <button id="btn"  class={clase}>{contenido1}</button>
         
-        <p class=" d-none" id="texto">{descripcion1}</p>
+        <p class=" d-block" id="texto">{descripcion1}</p>
         
         <button id="btn2"class={clase2}>{contenido2}</button>
         
@@ -54,6 +54,11 @@ const fotito=`url(/src/img/${fondo})`;
     border-color: rgba(247, 189, 86, 1);
     margin-top: 15px;
     margin-bottom: 15px;
+
+    /* &&:hover{
+        animation: slideDown .3s forwards ;
+        
+    } */
 }
 .btn-contacto{
     
@@ -67,7 +72,7 @@ const fotito=`url(/src/img/${fondo})`;
     
 
     &&:hover{
-        /* color:rgba(247, 189, 86, 1) ; */
+        
         background-color:rgb(211, 138, 3) ;
         transition:200ms;
     }
@@ -81,7 +86,7 @@ const fotito=`url(/src/img/${fondo})`;
     background-color: rgba(247, 189, 86, 1);
     margin: auto;
     border-radius: 10px;
-    animation: slideDown .5s forwards ;
+    animation: slideDown .3s forwards ;
 }
 .d-none{
     display: none;
@@ -92,68 +97,56 @@ const fotito=`url(/src/img/${fondo})`;
     background-color: rgba(247, 189, 86, 1);
     margin: auto;
     border-radius: 10px;
-    animation: slideUp .5s forwards;
+    animation: slideUp .3s forwards;
 }
          
 @keyframes slideDown {
   0% { 
-    
+    height: 0%;
     opacity: 0;
-    transform: translateY(-20px)
+    transform: translateY(-30px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0px)
+    transform: translateY(0px);
+    height:100%;
     
   }}
 
 @keyframes slideUp {
-to{
-    transform: translateY(-20px);
-    opacity: 0;
-    display: none;
-}
+    0%{
+        height: 100%;
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-30px);
+        opacity: 0;
+        display: none;
+
+    } 
 }
 
 </style>
-<script>
-    const btn =document.getElementById('btn');
-    const p =document.querySelector('#texto');
-    const btn2 =document.querySelector('#btn2');
-    const p2 =document.querySelector('#texto2');
-    const btn3 =document.querySelector('#btn3');
-    const p3 =document.querySelector('#texto3');
-    btn?.addEventListener("click", ()=>{
-        if  (p?.classList.contains('d-none')) {
-            p.classList.remove('d-none');
-            p.classList.add('d-block');
-        } else {
+<script src="../lib/masajes.js">
+    // const btn =document.getElementById('btn');
+    // const p =document.querySelector('#texto');
+    // const btn2 =document.querySelector('#btn2');
+    // const p2 =document.querySelector('#texto2');
+    // const btn3 =document.querySelector('#btn3');
+    // const p3 =document.querySelector('#texto3');
+    // btn?.addEventListener("click", ()=>{
+    //     if  (p?.classList.contains('d-none')) {
+    //         p.classList.remove('d-none');
+    //         p.classList.add('d-block');
+    //     } else {
             
-            p?.classList.add('hidden-css'); 
-           p?.classList.remove('d-block');
-           setTimeout(() => {
-            p?.classList.add('d-none');
-            p?.classList.remove('hidden-css');
-           }, 300);
+    //         p?.classList.add('hidden-css'); 
+    //        p?.classList.remove('d-block');
+    //        setTimeout(() => {
+    //         p?.classList.add('d-none');
+    //         p?.classList.remove('hidden-css');
+    //        }, 300);
 
         
-        }
-    })
-    btn2?.addEventListener("click", ()=>{
-        if  (p2?.classList.contains('d-none')) {
-            p2.classList.remove('d-none');
-        } else {
-           p2?.classList.add('d-none');  
-           p2?.classList.remove('d-block');
-
-        }
-    })
-    btn3?.addEventListener("click", ()=>{
-        if  (p3?.classList.contains('d-none')) {
-            p3.classList.remove('d-none');
-        } else {
-           p3?.classList.add('d-none');  
-        }
-    })
 </script>
