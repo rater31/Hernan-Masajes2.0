@@ -28,7 +28,7 @@ export const listamasaje: ListaMasaje[] = [
         descripcion2:'Donde la relajación es el resultado de la conbinación de masajes y estiramientos controlados de las cadenas musculares',
         contenido3:'Masaje Lomi Lomi ',
         descripcion3:'Siente como tu cuerpo se relaja cuando el masaje fluye de forma suave al ritmo de tu frecuencia energética',
-        clase:'btn-per',
+        clase:'btn-per ',
         clase2:'btn-per',
         clase3:'btn-per',
 
