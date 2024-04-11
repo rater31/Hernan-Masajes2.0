@@ -1,0 +1,25 @@
+---
+
+---
+
+<button ><slot></slot></button>
+
+
+<script>
+    const btn1 = document.getElementById("btn1");
+    const p = document.querySelector("#texto");
+    btn1?.addEventListener("click", () => {
+        if (
+            p?.classList.contains("d-none") ||
+            p?.classList.contains("hidden-css")
+        ) {
+            p?.classList.remove("d-none");
+            p?.classList.add("d-block");
+            console.log("entro en if");
+        } else if (p?.classList.contains("d-block")) {
+            p.classList.add("hidden-css");
+            p.classList.remove("d-block");
+            console.log("entro en elseif");
+        }
+    });
+</script>

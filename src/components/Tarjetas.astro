@@ -1,6 +1,6 @@
 ---
 import type { ListaMasaje } from "../lib/masajes"
-
+import Boton from "../components/Boton.astro";
 interface Props {
     listamasajes:ListaMasaje;
 }
@@ -18,9 +18,8 @@ const fotito=`url(/src/img/${fondo})`;
             <h2 class="text-start ps-3 font-bold text-xl  pb-1">{title}:</h2>
             <p class="w-[85%] m-auto font-bolder">{especificaciones}</p>
         </div>
-
-        
-        <button id="btn"  class={clase}>{contenido1}</button>
+    
+        <button id="btn1"  class={clase}>{contenido1}</button>
         
         <p class=" d-block" id="texto">{descripcion1}</p>
         
@@ -128,25 +127,26 @@ const fotito=`url(/src/img/${fondo})`;
 }
 
 </style>
-<script >
-    const btn =document.getElementById('btn');
-    const p =document.querySelector('#texto');
-    const btn2 =document.querySelector('#btn2');
-    const p2 =document.querySelector('#texto2');
-    const btn3 =document.querySelector('#btn3');
-    const p3 =document.querySelector('#texto3');
-    btn?.addEventListener("click", ()=>{
-        if  (p?.classList.contains('d-none')) {
-            p.classList.remove('d-none');
-            p.classList.add('d-block');
-        } else {
-            
-            p?.classList.add('hidden-css'); 
-           p?.classList.remove('d-block');
-           setTimeout(() => {
-            p?.classList.add('d-none');
-            p?.classList.remove('hidden-css');
-           }, 300);
-        }})
+<script>
+const btn1 =document.getElementById('btn1');
+const p =document.querySelector('#texto');
+// const btn2 =document.querySelector('#btn2');
+// const p2 =document.querySelector('#texto2');
+// const btn3 =document.querySelector('#btn3');
+// const p3 =document.querySelector('#texto3');
+btn1?.addEventListener("click", ()=>{
+    if  (p?.classList.contains('d-none')) {
+        p.classList.remove('d-none');
+        p.classList.add('d-block');
+        console.log('entro en if')
+    } else if(p?.classList.contains('d-block')) {
         
-</script>
+        p?.classList.add('hidden-css'); 
+       p?.classList.remove('d-block');
+       setTimeout(() => {
+        p?.classList.add('d-none');
+        p?.classList.remove('hidden-css');
+       }, 300);
+       console.log('entro en elseif')
+
+    }})</script>
