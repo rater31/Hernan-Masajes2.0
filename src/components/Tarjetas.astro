@@ -1,152 +1,168 @@
 ---
-import type { ListaMasaje } from "../lib/masajes"
-import Boton from "../components/Boton.astro";
+import type { ListaMasaje } from "../lib/masajes";
+import MyApp from "../components/Ej";
 interface Props {
-    listamasajes:ListaMasaje;
+    listamasajes: ListaMasaje;
 }
 
-const {listamasajes} = Astro.props
-const {title,clase,clase2,clase3,especificaciones,contenido1,contenido2,contenido3,descripcion1,descripcion2,descripcion3,fondo,id} =listamasajes
+const { listamasajes } = Astro.props;
+const {
+    title,
+    clase,
+    clase2,
+    clase3,
+    especificaciones,
+    contenido1,
+    contenido2,
+    contenido3,
+    descripcion1,
+    descripcion2,
+    descripcion3,
+    fondo,
+    id,
+} = listamasajes;
 
-const fotito=`url(/src/img/${fondo})`;
-
-
+const fotito = `url(/src/img/${fondo})`;
 ---
-<div class="foto w-[60%] m-auto " style={{backgroundImage:`${fotito}`}}>
-    <div class ="text-center text-white m-auto mt-5  negri  w-[100%]">
+
+<div class="foto w-[60%] m-auto" style={{ backgroundImage: `${fotito}` }}>
+    <div class="text-center text-white m-auto mt-5 negri w-[100%]">
         <div class="bg-title">
-            <h2 class="text-start ps-3 font-bold text-xl  pb-1">{title}:</h2>
+            <h2 class="text-start ps-3 font-bold text-xl pb-1">{title}:</h2>
             <p class="w-[85%] m-auto font-bolder">{especificaciones}</p>
         </div>
-    
-        <button id="btn1"  class={clase}>{contenido1}</button>
-        
-        <p class=" d-block" id="texto">{descripcion1}</p>
-        
-        <button id="btn2"class={clase2}>{contenido2}</button>
-        
-        <p id="texto2" class="d-none  bg-slate-800/60 w-[80%] m-auto">{descripcion2}</p>
-        
-        <button id="btn3" class={clase3}>{contenido3}</button>
-        
-        <p class=" d-none bg-slate-800/60 w-[80%] m-auto pb-3"id="texto3">{descripcion3}</p>
 
-        <button class="btn-contacto shadow-black"><a href="#">Solicita tu turno aquí</a></button>
+        <MyApp client:idle>
+            <button id="btn1" slot="boton" class={clase}>{contenido1}</button>
 
-    </div>      
-</div>
+            <p class="d-none" slot="texto" id="texto">{descripcion1}</p>
 
-<style>
-.foto{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 5px
-}
-.negri{
-    background-color: rgba(0, 0, 0, 0.438);
-}
-.btn-per{
-    width: 60%;
-    border-radius: 5px;
-    border:1.5px solid;
-    border-color: rgba(247, 189, 86, 1);
-    margin-top: 15px;
-    margin-bottom: 15px;
+            <button id="btn2" slot="boton2" class={clase2}>{contenido2}</button>
 
-    /* &&:hover{
+            <p id="texto2" slot="texto2" class="d-none bg-slate-800/60 w-[80%] m-auto">
+                {descripcion2}
+            </p>
+
+            <button id="btn3" slot="boton3" class={clase3}>{contenido3}</button>
+
+            <p slot="texto3" class="d-none bg-slate-800/60 w-[80%] m-auto pb-3" id="texto3">
+                {descripcion3}
+            </p>
+
+            <MyApp />
+        <button class="btn-contacto shadow-black"
+            ><a href="#">Solicita tu turno aquí</a></button
+        >
+    </div>
+
+    <style>
+        .foto {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+        }
+        .negri {
+            background-color: rgba(0, 0, 0, 0.438);
+        }
+        .btn-per {
+            width: 60%;
+            border-radius: 5px;
+            border: 1.5px solid;
+            border-color: rgba(247, 189, 86, 1);
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            /* &&:hover{
         animation: slideDown .3s forwards ;
         
     } */
-}
-.btn-contacto{
-    
-    width: 40%;
-    border-radius: 5px;
-    background-color: rgba(247, 189, 86, 1);
-    border:1.5px solid;
-    border-color: rgb(224, 199, 58);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    
+        }
+        .btn-contacto {
+            width: 40%;
+            border-radius: 5px;
+            background-color: rgba(247, 189, 86, 1);
+            border: 1.5px solid;
+            border-color: rgb(224, 199, 58);
+            margin-top: 15px;
+            margin-bottom: 15px;
 
-    &&:hover{
-        
-        background-color:rgb(211, 138, 3) ;
-        transition:200ms;
-    }
+            &&:hover {
+                background-color: rgb(211, 138, 3);
+                transition: 200ms;
+            }
+        }
+        .bg-title {
+            background-color: rgba(79, 79, 79, 0.517);
+        }
+        .d-block {
+            width: 80%;
+            background-color: rgba(247, 189, 86, 1);
+            margin: auto;
+            border-radius: 10px;
+            animation: slideDown 0.3s forwards;
+        }
+        .d-none {
+            display: none;
+            /* animation: slideUp .5s ; */
+        }
+        .hidden-css {
+            width: 80%;
+            background-color: rgba(247, 189, 86, 1);
+            margin: auto;
+            border-radius: 10px;
+            animation: slideUp 0.3s forwards;
+        }
 
-}
-.bg-title{
-   background-color: rgba(79, 79, 79, 0.517);
-}
-.d-block{
-    width: 80%;
-    background-color: rgba(247, 189, 86, 1);
-    margin: auto;
-    border-radius: 10px;
-    animation: slideDown .3s forwards ;
-}
-.d-none{
-    display: none;
-    /* animation: slideUp .5s ; */
-}     
-.hidden-css{
-    width: 80%;
-    background-color: rgba(247, 189, 86, 1);
-    margin: auto;
-    border-radius: 10px;
-    animation: slideUp .3s forwards;
-}
-         
-@keyframes slideDown {
-  0% { 
-    height: 0%;
-    opacity: 0;
-    transform: translateY(-30px);
-  }
+        @keyframes slideDown {
+            0% {
+                height: 0%;
+                opacity: 0;
+                transform: translateY(-30px);
+            }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-    height:100%;
-    
-  }}
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+                height: 100%;
+            }
+        }
 
-@keyframes slideUp {
-    0%{
-        height: 100%;
-        opacity: 1;
-    }
-    100%{
-        transform: translateY(-30px);
-        opacity: 0;
-        display: none;
+        @keyframes slideUp {
+            0% {
+                height: 100%;
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-30px);
+                opacity: 0;
+                display: none;
+            }
+        }
+    </style>
+    <!-- <script is:inline>
+    const btn1 = document.getElementById("btn1");
+    const p = document.getElementById("texto");
+    // const btn2 =document.querySelector('#btn2');
+    // const p2 =document.querySelector('#texto2');
+    // const btn3 =document.querySelector('#btn3');
+    // const p3 =document.querySelector('#texto3');
+    btn1?.addEventListener("click", () =>{
+        if (p?.classList.contains("d-none")) {
+            p.classList.remove("d-none");
+            p.classList.add("d-block");
+            console.log("entro en if");
+        } else if (p?.classList.contains("d-block")) {
+            p?.classList.add("hidden-css");
+            p?.classList.remove("d-block");
+            setTimeout(() => {
+                p?.classList.add("d-none");
+                p?.classList.remove("hidden-css");
+            }, 300);
+            console.log("entro en elseif");
+        }
+    });
+</script> -->
 
-    } 
-}
-
-</style>
-<script>
-const btn1 =document.getElementById('btn1');
-const p =document.querySelector('#texto');
-// const btn2 =document.querySelector('#btn2');
-// const p2 =document.querySelector('#texto2');
-// const btn3 =document.querySelector('#btn3');
-// const p3 =document.querySelector('#texto3');
-btn1?.addEventListener("click", ()=>{
-    if  (p?.classList.contains('d-none')) {
-        p.classList.remove('d-none');
-        p.classList.add('d-block');
-        console.log('entro en if')
-    } else if(p?.classList.contains('d-block')) {
-        
-        p?.classList.add('hidden-css'); 
-       p?.classList.remove('d-block');
-       setTimeout(() => {
-        p?.classList.add('d-none');
-        p?.classList.remove('hidden-css');
-       }, 300);
-       console.log('entro en elseif')
-
-    }})</script>
+    <!-- <script src="../lib/pp.js"></script> -->
+</div>
