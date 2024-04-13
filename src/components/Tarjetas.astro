@@ -33,9 +33,10 @@ const fotito = `url(/src/img/${fondo})`;
         </div>
 
         <MyApp client:idle>
-            <button id="btn1" slot="boton" class={clase}>{contenido1}</button>
+            <button id={id} slot="boton" class={clase}>{contenido1}</button>
 
-            <p class="d-none" slot="texto" id="texto">{descripcion1}</p>
+            <p class="d-none" id=`texto${id}` slot="texto" >{descripcion1}</p>
+         <MyApp />
 
             <button id="btn2" slot="boton2" class={clase2}>{contenido2}</button>
 
@@ -49,7 +50,6 @@ const fotito = `url(/src/img/${fondo})`;
                 {descripcion3}
             </p>
 
-            <MyApp />
         <button class="btn-contacto shadow-black"
             ><a href="#">Solicita tu turno aquí</a></button
         >
