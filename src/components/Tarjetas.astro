@@ -32,120 +32,115 @@ const fotito = `url(/src/img/${fondo})`;
             <p class="w-[85%] m-auto font-bolder">{especificaciones}</p>
         </div>
 
-        <MyApp client:idle>
+        <MyApp id=`${id}` client:idle>
+            <button id={id} slot="boton" class={clase}>{contenido1}</button>
 
-            <button id=`btn1${id}` slot="boton" class={clase}> {contenido1} </button>
-
-            <p class="d-none" id=`texto1${id}` slot="texto">{descripcion1}</p>
-            
+            <p class="d-none" id=`texto1${id}` slot="texto" >{descripcion1}</p>
         </MyApp>
+
             <button id="btn2" slot="boton2" class={clase2}>{contenido2}</button>
 
-            <p id="texto2" slot="texto2"class="d-none bg-slate-800/60 w-[80%] m-auto">
+            <p id="texto2" slot="texto2" class="d-none bg-slate-800/60 w-[80%] m-auto">
                 {descripcion2}
             </p>
 
             <button id="btn3" slot="boton3" class={clase3}>{contenido3}</button>
 
-            <p
-                slot="texto3"
-                class="d-none bg-slate-800/60 w-[80%] m-auto pb-3"
-                id="texto3"
-            >
+            <p slot="texto3" class="d-none bg-slate-800/60 w-[80%] m-auto pb-3" id="texto3">
                 {descripcion3}
             </p>
-     
 
-            <button class="btn-contacto shadow-black"
-                ><a href="#">Solicita tu turno aquí</a></button
-            >
+        <button class="btn-contacto shadow-black"
+            ><a href="#">Solicita tu turno aquí</a></button
+        >
+    </div>
 
-        <style>
-            .foto {
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                border-radius: 5px;
-            }
-            .negri {
-                background-color: rgba(0, 0, 0, 0.438);
-            }
-            .btn-per {
-                width: 60%;
-                border-radius: 5px;
-                border: 1.5px solid;
-                border-color: rgba(247, 189, 86, 1);
-                margin-top: 15px;
-                margin-bottom: 15px;
+    <style>
+        .foto {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+        }
+        .negri {
+            background-color: rgba(0, 0, 0, 0.438);
+        }
+        .btn-per {
+            width: 60%;
+            border-radius: 5px;
+            border: 1.5px solid;
+            border-color: rgba(247, 189, 86, 1);
+            margin-top: 15px;
+            margin-bottom: 15px;
 
-                /* &&:hover{
+            /* &&:hover{
         animation: slideDown .3s forwards ;
         
     } */
-            }
-            .btn-contacto {
-                width: 40%;
-                border-radius: 5px;
-                background-color: rgba(247, 189, 86, 1);
-                border: 1.5px solid;
-                border-color: rgb(224, 199, 58);
-                margin-top: 15px;
-                margin-bottom: 15px;
+        }
+        .btn-contacto {
+            width: 40%;
+            border-radius: 5px;
+            background-color: rgba(247, 189, 86, 1);
+            border: 1.5px solid;
+            border-color: rgb(224, 199, 58);
+            margin-top: 15px;
+            margin-bottom: 15px;
 
-                &&:hover {
-                    background-color: rgb(211, 138, 3);
-                    transition: 200ms;
-                }
+            &&:hover {
+                background-color: rgb(211, 138, 3);
+                transition: 200ms;
             }
-            .bg-title {
-                background-color: rgba(79, 79, 79, 0.517);
+        }
+        .bg-title {
+            background-color: rgba(79, 79, 79, 0.517);
+        }
+        .d-block {
+            width: 80%;
+            background-color: rgba(247, 189, 86, 1);
+            margin: auto;
+            border-radius: 10px;
+            animation: slideDown 0.3s forwards;
+        }
+        .d-none {
+            display: none;
+            /* animation: slideUp .5s ; */
+        }
+        .hidden-css {
+            width: 80%;
+            background-color: rgba(247, 189, 86, 1);
+            margin: auto;
+            border-radius: 10px;
+            animation: slideUp 0.3s forwards;
+        }
+
+        @keyframes slideDown {
+            0% {
+                height: 0%;
+                opacity: 0;
+                transform: translateY(-30px);
             }
-            .d-block {
-                width: 80%;
-                background-color: rgba(247, 189, 86, 1);
-                margin: auto;
-                border-radius: 10px;
-                animation: slideDown 0.3s forwards;
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+                height: 100%;
             }
-            .d-none {
+        }
+
+        @keyframes slideUp {
+            0% {
+                height: 100%;
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-30px);
+                opacity: 0;
                 display: none;
-                /* animation: slideUp .5s ; */
             }
-            .hidden-css {
-                width: 80%;
-                background-color: rgba(247, 189, 86, 1);
-                margin: auto;
-                border-radius: 10px;
-                animation: slideUp 0.3s forwards;
-            }
-
-            @keyframes slideDown {
-                0% {
-                    height: 0%;
-                    opacity: 0;
-                    transform: translateY(-30px);
-                }
-
-                100% {
-                    opacity: 1;
-                    transform: translateY(0px);
-                    height: 100%;
-                }
-            }
-
-            @keyframes slideUp {
-                0% {
-                    height: 100%;
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(-30px);
-                    opacity: 0;
-                    display: none;
-                }
-            }
-        </style>
-        <!-- <script is:inline>
+        }
+    </style>
+    <!-- <script is:inline>
     const btn1 = document.getElementById("btn1");
     const p = document.getElementById("texto");
     // const btn2 =document.querySelector('#btn2');
@@ -169,6 +164,5 @@ const fotito = `url(/src/img/${fondo})`;
     });
 </script> -->
 
-        <!-- <script src="../lib/pp.js"></script> -->
-    </div>
+    <!-- <script src="../lib/pp.js"></script> -->
 </div>
