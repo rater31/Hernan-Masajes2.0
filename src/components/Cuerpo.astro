@@ -1,0 +1,107 @@
+---
+import CuidadoCuerpo from '../components/CuidadoCuerpo.jsx'
+---
+
+
+<div class="w-[80%] bg-slate-500 m-auto text-center my-10 text-white">
+    <h2 class="text-2xl ms-4 text-start">Cuidado Corporal</h2>
+    <CuidadoCuerpo client:idle>
+        <button class="btn-per" id="btn11" slot="boton1">Afeitado del vello corporal</button>
+        <p class="d-none" id="texto11" slot="texto1">Se realiza por zonas.</p>
+        <button class="btn-per" id="btn12" slot="boton2">Depilación con cera</button>
+        <p class="d-none" id="texto12" slot="texto2">Se realiza por zonas</p>
+        <button class="btn-per" id="btn13" slot="boton3">Exfoliación Corporal</button>
+        <p class="d-none" id="texto13" slot="texto3" class="pb-5">Recomendado para liberar la piel de células muertas</p>
+    </CuidadoCuerpo>
+
+    <button class="btn-contacto shadow-black"><a href="#">Solicita tu turno aquí</a></button>
+
+</div>
+
+
+
+<style>
+        .foto {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+        }
+        .negri {
+            background-color: rgba(0, 0, 0, 0.438);
+        }
+        .btn-per {
+            width: 60%;
+            border-radius: 5px;
+            border: 1.5px solid;
+            border-color: rgba(247, 189, 86, 1);
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            /* &&:hover{
+        animation: slideDown .3s forwards ;
+        
+    } */
+        }
+        .btn-contacto {
+            width: 40%;
+            border-radius: 5px;
+            background-color: rgba(247, 189, 86, 1);
+            border: 1.5px solid;
+            border-color: rgb(224, 199, 58);
+            margin-top: 15px;
+            margin-bottom: 15px;
+
+            &&:hover {
+                background-color: #f39308;
+                transition: 200ms;
+            }
+        }
+        .bg-title {
+            background-color: rgba(79, 79, 79, 0.517);
+        }
+        .d-block {
+            width: 60%;
+            background-color:#f39308;
+            margin: auto;
+            border-radius: 10px;
+            animation: slideDown 0.3s forwards;
+        }
+        .d-none {
+            display: none;
+            /* animation: slideUp .5s ; */
+        }
+        .hidden-css {
+            width: 80%;
+            background-color: rgba(247, 189, 86, 1);
+            margin: auto;
+            border-radius: 10px;
+            animation: slideUp 0.3s forwards;
+        }
+
+        @keyframes slideDown {
+            0% {
+                height: 0%;
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+                height: 100%;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                height: 100%;
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-30px);
+                opacity: 0;
+                display: none;
+            }
+        }
+</style>
