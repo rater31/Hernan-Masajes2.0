@@ -61,7 +61,7 @@ export const listamasaje: ListaMasaje[] = [
         fondo: "tarjeta1.jpg",
         descripcion3: "",
         clase2: "btn-per",
-        clase3: ""
+        clase3: "d-none"
     },
     {
         id: "4",
@@ -71,18 +71,18 @@ export const listamasaje: ListaMasaje[] = [
         descripcion1: " éste tipo de masajes abarca todas las inserciones musculares con el objeto de lograr relajar y a su vez elevar la energía.",
         clase: "btn-per",
         contenido2: "Integrales (l)",
-        descripcion2: " similares a los anteriores pero más intensos, con movilizaciones que logran distender y a su vez energizar tu cuerpo.",
+        descripcion2: " similares a los anteriores pero más intensos, con movilizaciones que logran distender y a su vez energizar tu cuerpo.",
         clase2: "btn-per",
 
         fondo: 'tarjeta1.jpg',
         contenido3: "",
         descripcion3: "",
-        clase3: ""
+        clase3: "d-none"
     },
     {
         id: "5",
         title: "Masajes Modeladores - Reductores",
-        especificaciones: "son el complemento (sumado a actividad física y alimentación adecuada) ideal para marcar tu figura, disminuyendo algunas y elevando otras.",
+        especificaciones: "son el complemento (sumado a actividad física y alimentación adecuada) ideal para marcar tu figura, disminuyendo algunas y elevando otras.",
         contenido1: "",
         contenido2: "",
         contenido3: "",

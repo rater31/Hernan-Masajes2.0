@@ -33,22 +33,23 @@ const fotito = `url(/src/img/${fondo})`;
         </div>
 
         <MyApp id=`${id}` client:idle>
-            <button id={id} slot="boton" class={clase}>{contenido1}</button>
+            <button id=`btn1${id}` slot="boton" class={clase}>{contenido1}</button>
 
             <p class="d-none" id=`texto1${id}` slot="texto" >{descripcion1}</p>
-        </MyApp>
 
-            <button id="btn2" slot="boton2" class={clase2}>{contenido2}</button>
-
-            <p id="texto2" slot="texto2" class="d-none bg-slate-800/60 w-[80%] m-auto">
+            <button id=`btn2${id}` slot="boton2" class={clase2}>{contenido2}</button>
+    
+            <p id=`texto2${id}`  slot="texto2" class="d-none bg-slate-800/60 w-[80%] m-auto">
                 {descripcion2}
             </p>
-
-            <button id="btn3" slot="boton3" class={clase3}>{contenido3}</button>
-
-            <p slot="texto3" class="d-none bg-slate-800/60 w-[80%] m-auto pb-3" id="texto3">
+            <button id=`btn3${id}` slot="boton3" class={clase3}>{contenido3}</button>
+    
+            <p slot="texto3" class="d-none bg-slate-800/60 w-[80%] m-auto pb-3" id=`texto3${id}`>
                 {descripcion3}
             </p>
+        </MyApp>
+
+
 
         <button class="btn-contacto shadow-black"
             ><a href="#">Solicita tu turno aquí</a></button
@@ -88,7 +89,7 @@ const fotito = `url(/src/img/${fondo})`;
             margin-bottom: 15px;
 
             &&:hover {
-                background-color: rgb(211, 138, 3);
+                background-color: #f39308;
                 transition: 200ms;
             }
         }
@@ -97,7 +98,7 @@ const fotito = `url(/src/img/${fondo})`;
         }
         .d-block {
             width: 80%;
-            background-color: rgba(247, 189, 86, 1);
+            background-color:#f39308;
             margin: auto;
             border-radius: 10px;
             animation: slideDown 0.3s forwards;

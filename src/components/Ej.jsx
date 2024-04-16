@@ -9,11 +9,10 @@ function MyButton(props) {
         const text1 = document.getElementById('texto11');
         const text2 = document.getElementById('texto12');
         const text3 = document.getElementById('texto13');
+        const text4 = document.getElementById('texto14');
 
-        console.log(ids)
 
-        // console.log(id)
-        if (ids === '1'){
+        if (ids === 'btn11'){
 
             if  (text1?.classList.contains('d-none') ) {
         
@@ -30,7 +29,7 @@ function MyButton(props) {
                 text1?.classList.remove('hidden-css');
                }, 300);
             }
-        }elseif (ids === '2'){
+        }else if (ids === 'btn12'){
             if  (text2?.classList.contains('d-none') ) {
         
                 text2.classList.remove('d-none');
@@ -46,7 +45,7 @@ function MyButton(props) {
                 text2?.classList.remove('hidden-css');
                }, 300);
             }
-        }else {
+        }else if(ids === 'btn13'){
             if  (text3?.classList.contains('d-none') ) {
         
                 text3.classList.remove('d-none');
@@ -62,6 +61,167 @@ function MyButton(props) {
                 text3?.classList.remove('hidden-css');
                }, 300);
             }
+
+        }else if(ids === 'btn14'){
+            if  (text4?.classList.contains('d-none') ) {
+        
+                text4.classList.remove('d-none');
+                text4.classList.add('d-block');
+    
+            } else if(text4?.classList.contains('d-block')) {
+                
+                text4?.classList.add('hidden-css'); 
+               text4?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text4?.classList.add('d-none');
+                text4?.classList.remove('hidden-css');
+               }, 300);
+            }
+
+        }
+    
+    };
+    const btnClick2 = (e) =>{
+        
+        const ids= e.target.id
+
+        const text1 = document.getElementById('texto21');
+        const text2 = document.getElementById('texto22');
+        const text3 = document.getElementById('texto23');
+        const text4 = document.getElementById('texto24');
+
+
+
+        if (ids === 'btn21'){
+
+            if  (text1?.classList.contains('d-none') ) {
+        
+                text1.classList.remove('d-none');
+                text1.classList.add('d-block');
+    
+            } else if(text1?.classList.contains('d-block')) {
+                
+                text1?.classList.add('hidden-css'); 
+               text1?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text1?.classList.add('d-none');
+                text1?.classList.remove('hidden-css');
+               }, 300);
+            }
+        }else if (ids === 'btn22'){
+            if  (text2?.classList.contains('d-none') ) {
+        
+                text2.classList.remove('d-none');
+                text2.classList.add('d-block');
+    
+            } else if(text2?.classList.contains('d-block')) {
+                
+                text2?.classList.add('hidden-css'); 
+               text2?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text2?.classList.add('d-none');
+                text2?.classList.remove('hidden-css');
+               }, 300);
+            }
+        }else if(ids === 'btn23') {
+            if  (text3?.classList.contains('d-none') ) {
+        
+                text3.classList.remove('d-none');
+                text3.classList.add('d-block');
+    
+            } else if(text3?.classList.contains('d-block')) {
+                
+                text3?.classList.add('hidden-css'); 
+               text3?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text3?.classList.add('d-none');
+                text3?.classList.remove('hidden-css');
+               }, 300);
+            }
+
+        }else if(ids === 'btn24') {
+            if  (text4?.classList.contains('d-none') ) {
+        
+                text4.classList.remove('d-none');
+                text4.classList.add('d-block');
+    
+            } else if(text4?.classList.contains('d-block')) {
+                
+                text4?.classList.add('hidden-css'); 
+               text4?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text4?.classList.add('d-none');
+                text4?.classList.remove('hidden-css');
+               }, 300);
+            }
+
+        }
+    
+    };
+    const btnClick3 = (e) =>{
+        
+        const ids= e.target.id
+
+        const text1 = document.getElementById('texto31');
+        const text2 = document.getElementById('texto32');
+        const text3 = document.getElementById('texto33');
+
+
+        if (ids === 'btn31'){
+
+            if  (text1?.classList.contains('d-none') ) {
+        
+                text1.classList.remove('d-none');
+                text1.classList.add('d-block');
+    
+            } else if(text1?.classList.contains('d-block')) {
+                
+                text1?.classList.add('hidden-css'); 
+               text1?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text1?.classList.add('d-none');
+                text1?.classList.remove('hidden-css');
+               }, 300);
+            }
+        }else if (ids === 'btn32'){
+            if  (text2?.classList.contains('d-none') ) {
+        
+                text2.classList.remove('d-none');
+                text2.classList.add('d-block');
+    
+            } else if(text2?.classList.contains('d-block')) {
+                
+                text2?.classList.add('hidden-css'); 
+               text2?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text2?.classList.add('d-none');
+                text2?.classList.remove('hidden-css');
+               }, 300);
+            }
+        }else if(ids === 'btn33') {
+            if  (text3?.classList.contains('d-none') ) {
+        
+                text3.classList.remove('d-none');
+                text3.classList.add('d-block');
+    
+            } else if(text3?.classList.contains('d-block')) {
+                
+                text3?.classList.add('hidden-css'); 
+               text3?.classList.remove('d-block');
+    
+               setTimeout(() => {
+                text3?.classList.add('d-none');
+                text3?.classList.remove('hidden-css');
+               }, 300);
+            }
+
         }
     
     };
@@ -73,6 +233,12 @@ function MyButton(props) {
                 <span onClick={btnClick1} >{props.boton}</span>
                 
                 {props.texto}
+                <span onClick={btnClick2} >{props.boton2}</span>
+                
+                {props.texto2}
+                <span onClick={btnClick3} >{props.boton3}</span>
+                
+                {props.texto3}
   
                 </>
 
