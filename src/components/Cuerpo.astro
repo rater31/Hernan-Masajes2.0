@@ -3,18 +3,21 @@ import CuidadoCuerpo from '../components/CuidadoCuerpo.jsx'
 ---
 
 
-<div class="w-[80%] bg-slate-500 m-auto text-center my-10 text-white">
-    <h2 class="text-2xl ms-4 text-start">Cuidado Corporal</h2>
-    <CuidadoCuerpo client:idle>
-        <button class="btn-per" id="btn11" slot="boton1">Afeitado del vello corporal</button>
-        <p class="d-none" id="texto11" slot="texto1">Se realiza por zonas.</p>
-        <button class="btn-per" id="btn12" slot="boton2">Depilación con cera</button>
-        <p class="d-none" id="texto12" slot="texto2">Se realiza por zonas</p>
-        <button class="btn-per" id="btn13" slot="boton3">Exfoliación Corporal</button>
-        <p class="d-none" id="texto13" slot="texto3" class="pb-5">Recomendado para liberar la piel de células muertas</p>
-    </CuidadoCuerpo>
+<div class="w-[80%] bg-slate-500 m-auto text-center my-10 text-white foto">
+    <div class="negri">
 
-    <button class="btn-contacto shadow-black"><a href="#">Solicita tu turno aquí</a></button>
+        <h2 class="text-2xl ps-4 text-start bg-title ">Cuidado Corporal</h2>
+        <CuidadoCuerpo client:idle>
+            <button class="btn-per" id="btn11" slot="boton1">Afeitado del vello corporal</button>
+            <p class="d-none" id="texto11" slot="texto1">Se realiza por zonas.</p>
+            <button class="btn-per" id="btn12" slot="boton2">Depilación con cera</button>
+            <p class="d-none" id="texto12" slot="texto2">Se realiza por zonas</p>
+            <button class="btn-per" id="btn13" slot="boton3">Exfoliación Corporal</button>
+            <p class="d-none" id="texto13" slot="texto3" class="pb-5">Recomendado para liberar la piel de células muertas</p>
+        </CuidadoCuerpo>
+    
+        <button class="btn-contacto shadow-black"><a href="#">Solicita tu turno aquí</a></button>
+    </div>
 
 </div>
 
@@ -22,6 +25,7 @@ import CuidadoCuerpo from '../components/CuidadoCuerpo.jsx'
 
 <style>
         .foto {
+            background-image: url(../img/depilacion.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
