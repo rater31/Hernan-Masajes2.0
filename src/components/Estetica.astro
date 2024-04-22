@@ -9,11 +9,13 @@ import CuidadoCuerpo from '../components/CuidadoCuerpo.jsx'
         <h2 class="text-2xl ps-4 text-start bg-title ">Estética Corporal</h2>
         <CuidadoCuerpo client:idle>
             <button class="btn-per" id="btn11" slot="boton1">Afeitado del vello corporal</button>
-            <p class="d-none" id="texto11" slot="texto1">Se realiza por zonas.</p>
+            <p class="d-none" id="texto11" slot="texto1">Puedes sentir la sensación de higiene y menos olores desagradables con un buen afeitado corporal.
+                Atletas de diferentes disciplinas lo han adoptado por sus beneficios.
+                Tú puedes ser uno de los que experimentan la sensación de limpieza!</p>
             <button class="btn-per" id="btn12" slot="boton2">Depilación con cera</button>
-            <p class="d-none" id="texto12" slot="texto2">Se realiza por zonas</p>
+            <p class="d-none" id="texto12" slot="texto2">Un escalón más arriba en comparación al afeitado, ya que la depilación con cera , aparte de la higiene corporal y menos olores, ayuda en parte a exfoliar la piel. Dejando como resultado una piel con brillo y con una suavidad al tacto muy llamativa. </p>
             <button class="btn-per" id="btn13" slot="boton3">Exfoliación Corporal</button>
-            <p class="d-none" id="texto13" slot="texto3" class="pb-5">Recomendado para liberar la piel de células muertas</p>
+            <p class="d-none" id="texto13" slot="texto3" class="pb-5">Disfruta de una mini sesión de masajes relajantes, pero con una crema que ayuda a exfoliar la piel, quitando células muertas, permitiendo que ésta se renueve, humectandola, dejando una sensación agradable luego de una ducha.</p>
         </CuidadoCuerpo>
     
         <button class="btn-contacto shadow-black"><a href="#">Solicita tu turno aquí</a></button>
@@ -63,6 +65,8 @@ import CuidadoCuerpo from '../components/CuidadoCuerpo.jsx'
         }
         .bg-title {
             background-color: rgba(79, 79, 79, 0.517);
+            border-radius: 5px 5px 0px 0px;
+
         }
         .d-block {
             width: 60%;
@@ -76,7 +80,7 @@ import CuidadoCuerpo from '../components/CuidadoCuerpo.jsx'
             /* animation: slideUp .5s ; */
         }
         .hidden-css {
-            width: 80%;
+            width: 60%;
             background-color: rgba(247, 189, 86, 1);
             margin: auto;
             border-radius: 10px;
