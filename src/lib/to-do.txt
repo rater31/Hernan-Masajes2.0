@@ -1,0 +1,8 @@
+lista por hacer Lunes: 
+*cambiar texto de :
+        *Afeitado de vello corporal
+        *Depilacion con cera
+        *Exfoliacion corporal
+        *cambiar intro
+*Descargar las imagenes desde wp 
+*Hacer el responcive de la pagina 
