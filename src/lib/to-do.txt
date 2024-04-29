@@ -1,5 +1,2 @@
 lista por hacer Lunes: 
-
-*Descargar las imagenes desde wp 
-
 *Hacer el responcive de la pagina 
