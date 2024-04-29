@@ -4,11 +4,12 @@ import Menu from '../components/Menu.astro';
 import Footer from '../components/Footer.astro';
 import Tarjetas from '../components/Tarjetas.astro';
 import { listamasaje } from "../lib/masajes";
+import MenuHamburguesa from "../components/MenuHamburguesa.astro";
 
 ---
 <Layout title="Hernan Masajes | masajes en salta, Argentina">
 	<main>
-
+		<MenuHamburguesa/>
 		<Menu></Menu>
 		{
 			listamasaje.map((listamasaje) => <Tarjetas listamasajes ={listamasaje}/>)

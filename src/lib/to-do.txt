@@ -1,2 +1,6 @@
-lista por hacer Lunes: 
+lista por hacer: 
 *Hacer el responcive de la pagina 
+*Cambiar las imagenes de las cards de masajes por las de wp que me mando mariano
+*agregar los links de solicitar turno aqui de los servicios, en el footer, agregar links de las redes sociales,  
+
+*Crear bien en componente de react el menú hamburguesa
