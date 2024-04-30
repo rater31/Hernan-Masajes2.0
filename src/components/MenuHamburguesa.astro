@@ -1,21 +1,27 @@
 ---
+import MenuHamburguesas from '../components/MenuHamburguesa2.jsx'
 ---
-<div class="bg-slate-500 overflow-hidden  flex flex-col text-center lg:hidden  z-10 sticky top-0 h[100%] w-[100%]">
-<nav class="">
-    <div class="m-4 h-5">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+
+<MenuHamburguesas client:idle>
+
+    <div slot="div" class="bg-slate-500 overflow-hidden  flex flex-col text-center lg:hidden  z-10 sticky top-0 h[100%] w-[100%]">
+    <nav class="">
+        <div id="hambur" class="m-4  h-5">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul id="lista" class="grid mb-7 hidden  gap-7 text-white ">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/masajes">Masajes</a></li>
+            <li><a href="/cuerpo">Cuidado del cuerpo</a></li>
+            <li><a href="/estetica">Estetica Corporal</a></li>
+            <li><a class="btn-contacto">Contacto</a></li>
+        </ul>
+    </nav>
     </div>
-    <ul class="grid mb-7 hidden  gap-7 text-white ">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/masajes">Masajes</a></li>
-        <li><a href="/cuerpo">Cuidado del cuerpo</a></li>
-        <li><a href="/estetica">Estetica Corporal</a></li>
-        <li><a class="btn-contacto">Contacto</a></li>
-    </ul>
-</nav>
-</div>
+</MenuHamburguesas>
+
 
 
 <style>
