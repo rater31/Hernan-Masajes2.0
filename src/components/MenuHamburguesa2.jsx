@@ -4,10 +4,11 @@ function MyButton(props) {
     const lista = document.getElementById('lista');
     // const hambur = document.getElementById('hamburg');
     
-    if (lista.classList.contains('hidden')) {
-        lista.classList.remove('hidden')
+    if (lista.classList.contains('hidden-css')) {
+        lista.classList.remove('hidden-css')
+        lista.classList.add('d-block')
     }else{
-        lista.classList.add('hidden')
+        lista.classList.add('hidden-css')
     }
   
  }

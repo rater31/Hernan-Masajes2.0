@@ -11,7 +11,7 @@ import MenuHamburguesas from '../components/MenuHamburguesa2.jsx'
             <div class="line"></div>
             <div class="line"></div>
         </div>
-        <ul id="lista" class="grid mb-7 hidden  gap-7 text-white ">
+        <ul id="lista" class="grid mb-7 hidden-css  gap-7 text-white ">
             <li><a href="/">Inicio</a></li>
             <li><a href="/masajes">Masajes</a></li>
             <li><a href="/cuerpo">Cuidado del cuerpo</a></li>
@@ -41,4 +41,36 @@ import MenuHamburguesas from '../components/MenuHamburguesa2.jsx'
         padding: 5px;
         border-radius: 6px;
     }
+    .d-block {
+            animation: slideDown 0.5s forwards;
+        }
+    .hidden-css {
+            animation: slideUp 0.3s forwards;
+        }
+
+    @keyframes slideDown {
+            0% {
+                height: 0%;
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+                height: 100%;
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                height: 100%;
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-30px);
+                opacity: 0;
+                display: none;
+            }
+        }
 </style>

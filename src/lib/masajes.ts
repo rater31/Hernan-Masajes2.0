@@ -23,7 +23,7 @@ export const listamasaje: ListaMasaje[] = [
         especificaciones:'si buscas liberar tensiones causadas por el estrés, el masaje relajante es una excelente opción; con maniobras lentas y profundas.',
         contenido1:'Masaje Californiano o sensitivo',
         descripcion1:'Donde se logra relajar el cuerpo con movimientos envolventes y lentos donde se busca contener al consultante, tanto física como metalmente',
-        fondo:'tarjeta1.jpg',
+        fondo:'tarjeta1.webp',
         contenido2:'Masajes Tailandés',
         descripcion2:'Donde la relajación es el resultado de la conbinación de masajes y estiramientos controlados de las cadenas musculares',
         contenido3:'Masaje Lomi Lomi ',
@@ -41,7 +41,7 @@ export const listamasaje: ListaMasaje[] = [
         descripcion1: 'Focalizados en movilizar las energías del cuerpo mediante masajes profundos conbinados con digitopresión, dando atención a las zonas más comprometidas',
         contenido2: 'Masajes Convencionales',
         descripcion2: 'Donde el masaje se realiza de forma profunda y energética, trabajando en las zonas más afectadas',
-        fondo: "tarjeta2.jpg",
+        fondo: "tarjeta2.webp",
         contenido3: "",
         clase:'btn-per',
         clase2:'btn-per',
@@ -58,7 +58,7 @@ export const listamasaje: ListaMasaje[] = [
         descripcion2: 'si hay intermedio; el masaje será el adecuado para mantener',
         contenido3: '',
         clase: 'btn-per',
-        fondo: "tarjeta1.jpg",
+        fondo: "tarjeta1.webp",
         descripcion3: "",
         clase2: "btn-per",
         clase3: "d-none"
@@ -74,7 +74,7 @@ export const listamasaje: ListaMasaje[] = [
         descripcion2: " similares a los anteriores pero más intensos, con movilizaciones que logran distender y a su vez energizar tu cuerpo.",
         clase2: "btn-per",
 
-        fondo: 'tarjeta1.jpg',
+        fondo: 'tarjeta2.webp',
         contenido3: "",
         descripcion3: "",
         clase3: "d-none"
@@ -92,7 +92,7 @@ export const listamasaje: ListaMasaje[] = [
         clase: "",
         clase2: "",
         clase3: "",
-        fondo: "tarjeta1.jpg"
+        fondo: "tarjeta1.webp"
     },
     {
         id: "6",
@@ -107,6 +107,6 @@ export const listamasaje: ListaMasaje[] = [
         clase: "",
         clase2: "",
         clase3: "",
-        fondo: "tarjeta1.jpg"
+        fondo: "tarjeta2.webp"
     }
 ];
