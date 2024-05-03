@@ -6,9 +6,13 @@ function MyButton(props) {
     
     if (lista.classList.contains('hidden-css')) {
         lista.classList.remove('hidden-css')
+        lista.classList.remove('hidden')
         lista.classList.add('d-block')
     }else{
         lista.classList.add('hidden-css')
+        setTimeout(() => {
+        lista.classList.add('hidden')
+        }, 400);
     }
   
  }
