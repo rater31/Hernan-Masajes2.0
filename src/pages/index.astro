@@ -5,6 +5,8 @@ import Bienvenida from "../components/Bienvenida.astro";
 import Servicios from "../components/servicios.astro";
 import Footer from "../components/Footer.astro";
 import Menu2 from '../components/MenuHamburguesa.astro';
+import { Image } from 'astro:assets';
+import logo from '../img/logo.png'
 ---
 
 <Layout title="Hernan Masajes | masajes en salta, Argentina">
@@ -14,7 +16,7 @@ import Menu2 from '../components/MenuHamburguesa.astro';
 				<Menu2/>
 				<div class="princi h-[560px] mt-1">
 					<div class="bgblur flex justify-center">
-						<img src="/src/img/logo.png" alt="logo" srcset="" />
+						<Image src={logo} alt="logo" srcset="" />
 					</div>
 				</div>
 				<Menu />

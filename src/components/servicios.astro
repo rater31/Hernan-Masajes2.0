@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import flor from '../img/flor.png'
 ---
 
 <div class="text-white fondoServicios">
@@ -16,9 +17,9 @@
                 <div class="linea m-auto w-[50%] lg:w-96  lg:block bg-amber-400"></div>
             </ul>
         </div>
-        <img
+        <Image
             class="w-[140px] lg:w-[220px] lg:h-[172] lg:mt-20 mt-16  lg:ms-9 m-auto"
-            src="/src/img/flor.png"
+            src={flor}
             alt="flor"
             srcset=""
         />
