@@ -1,22 +1,41 @@
 ---
-import logoWap from '../img/whatsapp-svgrepo-com.svg'
-import { Image } from 'astro:assets';
-
-
+import logoWap from "../img/whatsapp-svgrepo-com.svg";
+import { Image } from "astro:assets";
 ---
+
 <!-- <h1 class="text-white">Hola</h1> -->
-<a href="https://wa.me/3874753268" class="flex justify-end bottom-5 end-7 z-10 brillo  fixed">
-    <Image class="text-white w-[40px] m-auto " src={logoWap} alt="Logo" srcset="">
+<a
+    href="https://wa.me/3874753268"
+    class="flex justify-end bottom-5 end-7 z-10 brillo fixed"
+>
+    <Image
+        class="text-white w-[40px] m-auto"
+        src={logoWap}
+        alt="Logo"
+        srcset=""
+    />
 
-</a>
+    <style>
+        .brillo {
+            filter: drop-shadow(0px 0px 10px rgba(106, 14, 14, 1.9));
+            background-color: rgb(254, 254, 254);
+            border-radius: 100%;
+            width: 50px;
+            height: 50px;
+            animation: resaltar 1.5s infinite;
 
+        }
+        @keyframes resaltar {
+            0% {
+                filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.1));
+            }
 
-<style>
-    .brillo{
-        filter: drop-shadow(0px 0px 10px rgba(106, 14, 14, 1.9));
-        background-color: rgb(254, 254, 254);
-        border-radius: 100%;
-        width: 50px;
-        height: 50px;
-    }
-</style>
+            50% {
+                filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+            }
+            100% {
+                filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.1));
+            }
+        }
+    </style></a
+>

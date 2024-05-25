@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import Tarjetas from '../components/Tarjetas.astro';
 import { listamasaje } from "../lib/masajes";
 import MenuHamburguesa from "../components/MenuHamburguesa.astro";
+import Wp from "../components/Wp.astro";
 
 ---
 <Layout title="Hernan Masajes | masajes en salta, Argentina">
@@ -15,6 +16,7 @@ import MenuHamburguesa from "../components/MenuHamburguesa.astro";
 			listamasaje.map((listamasaje) => <Tarjetas listamasajes ={listamasaje}/>)
 		}
 		<Footer></Footer>
+		<Wp/>
 	</main>
 </Layout>
 
