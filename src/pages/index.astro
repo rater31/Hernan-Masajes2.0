@@ -32,16 +32,34 @@ import Wp from "../components/Wp.astro";
 
 <style>
 	.princi {
-		background-image: url("../img/fondo.jpeg");
+		background-image: url("../img/fondo.webp");
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
 	}
-	.bgblur {
+	@media screen and (min-width: 768px) {
+		.bgblur {
+			background-color: #00000080;
+		backdrop-filter: blur(3px);
+		height: 100%;
+		align-items: center;
+		}
+		
+	}
+	@media screen and (max-width: 768px) {
+		.bgblur {
+			background-color: #00000042;
+		backdrop-filter: blur(3px);
+		height: 100%;
+		align-items: center;
+		}
+		
+	}
+	/* .bgblur {
 		background-color: #00000042;
 		backdrop-filter: blur(8px);
 		height: 100%;
 		align-items: center;
-	}
+	} */
 </style>
 
