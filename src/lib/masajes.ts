@@ -25,7 +25,7 @@ export const listamasaje: ListaMasaje[] = [
         descripcion1:'Donde se logra relajar el cuerpo con movimientos envolventes y lentos donde se busca contener al consultante, tanto física como metalmente',
         fondo:'tarjeta1.webp',
         contenido2:'Masajes Tailandés',
-        descripcion2:'Donde la relajación es el resultado de la conbinación de masajes y estiramientos controlados de las cadenas musculares',
+        descripcion2:'Donde la relajación es el resultado de la combinación de masajes y estiramientos controlados de las cadenas musculares',
         contenido3:'Masaje Lomi Lomi ',
         descripcion3:'Siente como tu cuerpo se relaja cuando el masaje fluye de forma suave al ritmo de tu frecuencia energética',
         clase:'btn-per ',
