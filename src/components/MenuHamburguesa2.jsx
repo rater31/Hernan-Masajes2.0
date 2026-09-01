@@ -4,6 +4,7 @@ function MyButton(props) {
     const lista = document.getElementById('lista');
     // const hambur = document.getElementById('hamburg');
     
+    void e;
     if (lista.classList.contains('hidden-css')) {
         lista.classList.remove('hidden-css')
         lista.classList.remove('hidden')

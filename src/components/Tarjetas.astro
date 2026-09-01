@@ -1,6 +1,7 @@
 ---
 import type { ListaMasaje } from "../lib/masajes";
 import MyApp from "../components/Ej";
+import { waLink } from "../lib/contacto";
 interface Props {
     listamasajes: ListaMasaje;
 }
@@ -18,7 +19,6 @@ const {
     descripcion1,
     descripcion2,
     descripcion3,
-    fondo,
     id,
 } = listamasajes;
 
@@ -51,7 +51,7 @@ const {
 
 
 
-        <button class="w-[60%] lg:w-1/4 btn-contacto shadow-black"><a target="_blank" href=" https://wa.me/3874753268/?text=Quisiera+solicitar+un+turno+para+masajes">Solicita tu turno aquí</a></button>
+        <button class="w-[60%] lg:w-1/4 btn-contacto shadow-black"><a target="_blank" rel="noopener noreferrer" href={waLink("Quisiera solicitar un turno para masajes")}>Solicita tu turno aquí</a></button>
     </div>
 
     <style>

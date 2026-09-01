@@ -1,13 +1,15 @@
 ---
 import logoWap from "../img/whatsapp-svgrepo-com.svg";
 import { Image } from "astro:assets";
+import { WHATSAPP_URL } from "../lib/contacto";
 ---
 
 <!-- <h1 class="text-white">Hola</h1> -->
 <a
-    href="https://wa.me/3874753268"
+    href={WHATSAPP_URL}
     class="flex justify-end bottom-5 end-7 z-10 brillo fixed"
     target="_blank"
+    rel="noopener noreferrer"
 >
     <Image
         class="text-white w-[40px] m-auto"
