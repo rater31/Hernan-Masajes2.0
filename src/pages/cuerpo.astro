@@ -1,36 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Menu from '../components/Menu.astro';
-import Footer from '../components/Footer.astro';
-import Cuerpos from '../components/Cuerpo.astro';
-import MenuHamburguesa from "../components/MenuHamburguesa.astro";
-import Wp from "../components/Wp.astro";
-
-
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import Cuerpos from "../components/Cuerpo.astro";
 ---
-<Layout title="Hernan Masajes | Cuidado corporal en salta, Argentina">
-	<main>
-		<MenuHamburguesa/>
-		<Menu></Menu>
-		<Cuerpos></Cuerpos>
-		<Footer></Footer>
-		<Wp/>
-	</main>
+
+<Layout
+  title="Hernán Masajes | Cuidado corporal en Salta, Argentina"
+  description="Cuidado corporal en Salta: estiramientos, ejercicios funcionales y esferodinamia para relajar el cuerpo y la mente."
+>
+  <PageHero
+    eyebrow="Cuidado del cuerpo"
+    title="Cuidado del cuerpo."
+    description="Estiramientos, ejercicios funcionales y esferodinamia para acompañar tu cuerpo, liberar tensiones y relajar la mente."
+  />
+  <Cuerpos />
 </Layout>
-
-<style>
-.princi{
-	background-image: url("../img/fondo.jpeg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-
-	
-}
-.bgblur{
-	background-color: #00000042;
-	backdrop-filter: blur(8px);
-	height: 100%;
-	align-items: center;
-}
-</style>

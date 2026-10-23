@@ -1,36 +1,17 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Menu from '../components/Menu.astro';
-import Footer from '../components/Footer.astro';
-import Estetic from '../components/Estetica.astro';
-import MenuHamburguesa from "../components/MenuHamburguesa.astro";
-import Wp from "../components/Wp.astro";
-
-
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import Estetic from "../components/Estetica.astro";
 ---
-<Layout title="Hernan Masajes | Estetica corporal en salta, Argentina">
-	<main>
-		<MenuHamburguesa/>
-		<Menu></Menu>
-		<Estetic></Estetic>
-		<Footer></Footer>
-		<Wp/>
-	</main>
+
+<Layout
+  title="Hernán Masajes | Estética corporal en Salta, Argentina"
+  description="Estética corporal en Salta: afeitado, depilación con cera y exfoliación corporal en Hernán Masajes."
+>
+  <PageHero
+    eyebrow="Estética corporal"
+    title="Estética corporal."
+    description="Afeitado, depilación con cera y exfoliación para renovar la piel, recuperar suavidad y sentirte bien."
+  />
+  <Estetic />
 </Layout>
-
-<style>
-.princi{
-	background-image: url("../img/fondo.jpeg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-
-	
-}
-.bgblur{
-	background-color: #00000042;
-	backdrop-filter: blur(8px);
-	height: 100%;
-	align-items: center;
-}
-</style>

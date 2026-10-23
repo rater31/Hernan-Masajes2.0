@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import foto1 from "../img/WhatsApp Image 2024-04-21 at 21.54.17.webp";
+import foto2 from "../img/WhatsApp Image 2024-04-21 at 21.56.54.webp";
+import foto3 from "../img/WhatsApp Image 2024-04-21 at 22.07.20.webp";
+import { waLink } from "../lib/contacto";
+
+const imagenes = [
+  {
+    src: foto1,
+    alt: "Interior del espacio de Hernán Masajes",
+    clase: "col-span-6 aspect-[4/5] lg:col-span-5",
+    delay: "0ms",
+  },
+  {
+    src: foto2,
+    alt: "Detalle del ambiente de masajes",
+    clase: "col-span-3 aspect-[4/5] lg:col-span-4",
+    delay: "100ms",
+  },
+  {
+    src: foto3,
+    alt: "Sala de tratamientos de Hernán Masajes",
+    clase: "col-span-3 aspect-[4/5] lg:col-span-3",
+    delay: "180ms",
+  },
+];
+---
+
+<section class="border-t border-white/10 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div data-reveal>
+        <p class="text-xs uppercase tracking-[0.32em] text-gold">El espacio</p>
+        <h2 class="mt-5 max-w-2xl text-4xl leading-[1.02] text-cream sm:text-5xl">
+          Un lugar pensado para
+          <span class="italic text-gold"> desconectar.</span>
+        </h2>
+      </div>
+      <p
+        class="max-w-sm text-sm leading-relaxed text-muted"
+        data-reveal
+        style="--reveal-delay: 100ms"
+      >
+        Luz cálida, silencio y un ambiente reservado para que cada sesión sea
+        una pausa real en tu día.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-6 gap-4 lg:grid-cols-12">
+      {imagenes.map((imagen) => (
+        <figure
+          class:list={[
+            "group relative overflow-hidden rounded-3xl border border-white/10",
+            imagen.clase,
+          ]}
+          data-reveal="scale"
+          style={`--reveal-delay: ${imagen.delay}`}
+        >
+          <Image
+            src={imagen.src}
+            alt={imagen.alt}
+            class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+          <div
+            class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+            aria-hidden="true"
+          />
+        </figure>
+      ))}
+    </div>
+
+    <div class="mt-8 flex justify-end" data-reveal>
+      <a
+        href={waLink("Hola, quisiera conocer el espacio y reservar un turno")}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-bright"
+      >
+        Reservar una visita
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </div>
+</section>

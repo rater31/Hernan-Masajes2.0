@@ -1,55 +1,102 @@
 ---
-import { Image } from 'astro:assets';
-import flor from '../img/flor.png'
+import { Image } from "astro:assets";
+import masajesImg from "../img/pexels-monstera-production-6620860.jpg";
+import cuerpoImg from "../img/cuidado2.webp";
+import esteticaImg from "../img/estetica.webp";
+import { withBase } from "../lib/navegacion";
+
+const servicios = [
+  {
+    numero: "01",
+    title: "Masajes",
+    description:
+      "Relajantes, descontracturantes, deportivos y energizantes para soltar tensiones y recuperar energía.",
+    href: withBase("/masajes"),
+    imagen: masajesImg,
+    alt: "Masaje relajante profesional",
+  },
+  {
+    numero: "02",
+    title: "Cuidado del cuerpo",
+    description:
+      "Estiramientos, ejercicios funcionales y esferodinamia para moverte mejor y relajar la mente.",
+    href: withBase("/cuerpo"),
+    imagen: cuerpoImg,
+    alt: "Trabajo de cuidado corporal",
+  },
+  {
+    numero: "03",
+    title: "Estética corporal",
+    description:
+      "Afeitado, depilación con cera y exfoliación para renovar la piel y sentirte bien.",
+    href: withBase("/estetica"),
+    imagen: esteticaImg,
+    alt: "Tratamiento de estética corporal",
+  },
+];
 ---
 
-<div class="text-white fondoServicios">
-    <div class="negri">
-        <div class=" justify-center lg:flex  lg:justify-between ">
-            <h3 class="text-center lg:ms-20 mt-[30px] text-[40px]">Nuestros Servicios</h3>
-
-            <ul class="text-[25px]  lg:me-20 lg:text-2xl text-center">
-                <li class="mt-20"><a href="/masajes">Masajes</a></li>
-                <div class="linea m-auto w-[50%] lg:w-96  lg:block bg-amber-400"></div>
-                <li class="mt-20"><a href="/cuerpo">Cuidado del Cuerpo</a></li>
-                <div class="linea m-auto w-[50%] lg:w-96 lg:block bg-amber-400"></div>
-                <li class="mt-20"><a href="/estetica">Estetica Corporal</a></li>
-                <div class="linea m-auto w-[50%] lg:w-96  lg:block bg-amber-400"></div>
-            </ul>
-        </div>
-        <Image
-            class="w-[140px] lg:w-[220px] lg:h-[172] lg:mt-20 mt-16  lg:ms-9 m-auto"
-            src={flor}
-            alt="flor"
-            srcset=""
-        />
-        
+<section id="servicios" class="border-t border-white/10 py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div data-reveal>
+        <p class="text-xs uppercase tracking-[0.32em] text-gold">Servicios</p>
+        <h2 class="mt-5 max-w-2xl text-4xl leading-[1.02] text-cream sm:text-5xl">
+          Tres caminos para
+          <span class="italic text-gold"> volver a sentirte bien.</span>
+        </h2>
+      </div>
+      <p
+        class="max-w-sm text-sm leading-relaxed text-muted"
+        data-reveal
+        style="--reveal-delay: 100ms"
+      >
+        Elegí la experiencia que mejor se adapte a tu momento. Coordinamos cada
+        sesión según tus necesidades.
+      </p>
     </div>
-</div>
 
-<style>
-    a {
-        cursor: pointer;
-
-        &&:hover {
-            color: rgb(251, 191, 36);
-            transition: all 0.2s;
-        }
-    }
-    .fondoServicios {
-        height: 602px;
-        background-image: url("../img/pexels-monstera-production-6620860.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-    .negri {
-        background-color: #66450c54;
-        height: 100%;
-    }
-    .linea {
-        border-radius: 25px;
-        height: 3px;
-        
-    }
-</style>
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {servicios.map((servicio, index) => (
+        <a
+          href={servicio.href}
+          data-reveal
+          style={`--reveal-delay: ${index * 90}ms`}
+          class="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-charcoal transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_24px_60px_-24px_rgba(201,168,106,0.25)]"
+        >
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <Image
+              src={servicio.imagen}
+              alt={servicio.alt}
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent"
+              aria-hidden="true"
+            />
+            <span class="absolute top-4 left-4 rounded-full border border-white/20 bg-ink/50 px-3 py-1 text-[10px] tracking-[0.2em] text-cream/80 backdrop-blur">
+              {servicio.numero}
+            </span>
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="text-2xl text-cream transition-colors group-hover:text-gold">
+              {servicio.title}
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-muted">
+              {servicio.description}
+            </p>
+            <span class="mt-6 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.18em] text-gold">
+              Explorar
+              <span
+                class="transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              >
+                →
+              </span>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

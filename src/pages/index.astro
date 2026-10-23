@@ -1,65 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Menu from "../components/Menu.astro";
+import Hero from "../components/Hero.astro";
 import Bienvenida from "../components/Bienvenida.astro";
 import Servicios from "../components/servicios.astro";
-import Footer from "../components/Footer.astro";
-import Menu2 from '../components/MenuHamburguesa.astro';
-import { Image } from 'astro:assets';
-import logo from '../img/logo.png';
-import Wp from "../components/Wp.astro";
+import Gallery from "../components/Gallery.astro";
 ---
 
-<Layout title="Hernan Masajes | masajes en salta, Argentina">
-	<main>
-		
-			<div>
-				<Menu2/>
-				<div class="princi h-[560px] mt-1">
-					<div class="bgblur flex justify-center">
-						<Image class="w-[70%] lg:w-1/4" src={logo} alt="logo" srcset="" />
-					</div>
-				</div>
-				<Menu />
-				<Bienvenida />
-				<Servicios />
-
-				<Footer />
-				<Wp/>
-			</div>
-	</main>
+<Layout
+  title="Hernán Masajes | Masajes y estética corporal en Salta"
+  description="Masajes relajantes, descontracturantes, deportivos y estéticos en Salta, Argentina. Atención con cita previa. Solicitá tu turno por WhatsApp."
+>
+  <Hero slot="hero" />
+  <Bienvenida />
+  <Servicios />
+  <Gallery />
 </Layout>
-
-<style>
-	.princi {
-		background-image: url("../img/fondo.webp");
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-	}
-	@media screen and (min-width: 768px) {
-		.bgblur {
-			background-color: #00000080;
-		backdrop-filter: blur(3px);
-		height: 100%;
-		align-items: center;
-		}
-		
-	}
-	@media screen and (max-width: 768px) {
-		.bgblur {
-			background-color: #00000042;
-		backdrop-filter: blur(3px);
-		height: 100%;
-		align-items: center;
-		}
-		
-	}
-	/* .bgblur {
-		background-color: #00000042;
-		backdrop-filter: blur(8px);
-		height: 100%;
-		align-items: center;
-	} */
-</style>
-

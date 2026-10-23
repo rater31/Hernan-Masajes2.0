@@ -1,38 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Menu from '../components/Menu.astro';
-import Footer from '../components/Footer.astro';
-import Tarjetas from '../components/Tarjetas.astro';
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/PageHero.astro";
+import Tarjetas from "../components/Tarjetas.astro";
 import { listamasaje } from "../lib/masajes";
-import MenuHamburguesa from "../components/MenuHamburguesa.astro";
-import Wp from "../components/Wp.astro";
-
+import { waLink } from "../lib/contacto";
 ---
-<Layout title="Hernan Masajes | masajes en salta, Argentina">
-	<main>
-		<MenuHamburguesa/>
-		<Menu></Menu>
-		{
-			listamasaje.map((listamasaje) => <Tarjetas listamasajes ={listamasaje}/>)
-		}
-		<Footer></Footer>
-		<Wp/>
-	</main>
+
+<Layout
+  title="Hernán Masajes | Tipos de masajes en Salta, Argentina"
+  description="Conocé los masajes relajantes, descontracturantes, deportivos y energizantes de Hernán Masajes en Salta, Argentina."
+>
+  <PageHero
+    eyebrow="Masajes"
+    title="Masajes a tu medida."
+    description="Relajación, alivio de tensiones y recuperación. Elegí la técnica que mejor acompañe tu momento y coordinamos tu turno."
+  />
+
+  <section class="py-16 lg:py-24">
+    <div class="mx-auto max-w-6xl px-5 lg:px-8">
+      <div class="grid gap-6 md:grid-cols-2">
+        {listamasaje.map((masaje) => (
+          <Tarjetas listamasajes={masaje} />
+        ))}
+      </div>
+
+      <div
+        class="mt-12 flex flex-col gap-5 rounded-3xl border border-gold/20 bg-charcoal px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-10"
+        data-reveal
+      >
+        <div>
+          <h2 class="text-3xl text-cream">¿No sabés cuál elegir?</h2>
+          <p class="mt-2 max-w-md text-sm text-muted">
+            Contanos cómo te sentís y qué necesitás. Te ayudamos a encontrar la
+            opción indicada.
+          </p>
+        </div>
+        <a
+          href={waLink("Hola, no sé qué masaje elegir. ¿Me podrías orientar?")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-bright"
+        >
+          Consultar por WhatsApp
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
-
-<style>
-.princi{
-	background-image: url("../img/fondo.jpeg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-
-	
-}
-.bgblur{
-	background-color: #00000042;
-	backdrop-filter: blur(8px);
-	height: 100%;
-	align-items: center;
-}
-</style>

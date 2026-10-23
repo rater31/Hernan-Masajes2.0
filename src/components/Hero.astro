@@ -1,0 +1,96 @@
+---
+import { Image } from "astro:assets";
+import fondo from "../img/fondo.webp";
+import { WHATSAPP_TEL, waLink } from "../lib/contacto";
+import { withBase } from "../lib/navegacion";
+---
+
+<section class="relative flex min-h-[calc(100svh-5rem)] items-end overflow-hidden">
+  <Image
+    src={fondo}
+    alt=""
+    loading="eager"
+    class="hero-image absolute inset-0 h-full w-full object-cover"
+    aria-hidden="true"
+  />
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/25"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-ink/50"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative mx-auto w-full max-w-7xl px-5 pt-24 pb-16 lg:px-8 lg:pb-24">
+    <div class="max-w-3xl">
+      <p
+        class="flex items-center gap-3 text-[10px] uppercase tracking-[0.34em] text-gold sm:text-xs"
+        data-reveal
+      >
+        <span class="h-px w-10 bg-gold/60" aria-hidden="true"></span>
+        Masajes & bienestar en Salta
+      </p>
+
+      <h1
+        class="mt-6 text-[clamp(3.25rem,8vw,6.5rem)] leading-[0.88] text-cream"
+        data-reveal
+        style="--reveal-delay: 90ms"
+      >
+        Un momento para
+        <span class="gold-text block italic">volver a vos.</span>
+      </h1>
+
+      <p
+        class="mt-7 max-w-xl text-base leading-relaxed text-cream/70 sm:text-lg"
+        data-reveal
+        style="--reveal-delay: 180ms"
+      >
+        Masajes, cuidado corporal y estética con atención personalizada. Un
+        espacio para soltar tensiones, recuperar energía y encontrarte con tu
+        cuerpo.
+      </p>
+
+      <div
+        class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+        data-reveal
+        style="--reveal-delay: 260ms"
+      >
+        <a
+          href={waLink("Hola, quisiera reservar un turno")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-gold-bright"
+        >
+          Reservar turno
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a
+          href={withBase("/masajes")}
+          class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:border-gold/60 hover:text-gold"
+        >
+          Explorar masajes
+        </a>
+      </div>
+
+      <ul
+        class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-cream/55"
+        data-reveal
+        style="--reveal-delay: 340ms"
+      >
+        <li class="flex items-center gap-2">
+          <span class="size-1 rounded-full bg-gold" aria-hidden="true"></span>
+          Salta, Argentina
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="size-1 rounded-full bg-gold" aria-hidden="true"></span>
+          Atención con cita previa
+        </li>
+        <li class="flex items-center gap-2">
+          <span class="size-1 rounded-full bg-gold" aria-hidden="true"></span>
+          {WHATSAPP_TEL}
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

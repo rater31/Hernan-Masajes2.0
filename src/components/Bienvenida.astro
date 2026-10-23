@@ -1,37 +1,78 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../img/logo.png'
+import { Image } from "astro:assets";
+import bienvenida from "../img/fondo-bienvenida.jpg";
+import { withBase } from "../lib/navegacion";
+
+const beneficios = [
+  "Técnicas adaptadas a lo que tu cuerpo necesita.",
+  "Un ambiente cálido, reservado y sin apuros.",
+  "Atención personalizada en cada sesión.",
+];
 ---
 
+<section class="relative py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="grid gap-14 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:gap-20">
+      <div data-reveal="left">
+        <p class="text-xs uppercase tracking-[0.32em] text-gold">
+          Sobre la experiencia
+        </p>
+        <h2 class="mt-5 max-w-xl text-4xl leading-[1.02] text-cream sm:text-5xl lg:text-6xl">
+          Cada cuerpo pide
+          <span class="italic text-gold"> algo distinto.</span>
+        </h2>
+        <p class="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+          Permítete experimentar la estimulante sensación de ver cómo tu cuerpo
+          se energiza con un masaje hecho de forma profesional. Dejá que fluya
+          al ritmo de los movimientos y las técnicas, mientras aprendés a
+          administrar la energía que emana de tu cuerpo para encontrarte con
+          vos.
+        </p>
 
-<div class="fondo-foto my-20">
-    <div class="negri">
+        <ul class="mt-8 space-y-3">
+          {beneficios.map((beneficio) => (
+            <li class="flex items-start gap-3 text-sm text-cream/75">
+              <span
+                class="mt-2 size-1 shrink-0 rounded-full bg-gold"
+                aria-hidden="true"
+              />
+              {beneficio}
+            </li>
+          ))}
+        </ul>
 
-        <Image class="m-auto my-5 w-[100px] h-[100px]" src={logo} alt="Hernan Masajes"/>
-        <div class="h-[3px] bg-amber-400 linea"></div>
-        <p class="text-white text-center w-96 lg:w-3/4 my-4 text-[18px] lg:text-[24px] m-auto"><strong class="text-[orange]"> ¡MASAJES!</strong> Permítete  experimentar la estimulante sensación de ver cómo tu cuerpo se energiza con un masaje hecho de forma profesional.
-            Deja que tu cuerpo fluya al ritmo de los movimientos y técnicas aplicadas,  mientras aprendes a administrar el gran caudal de energía que emana de tu cuerpo, para encontrarte contigo mismo!
-            Prueba y entenderás!</p>
+        <a
+          href={withBase("/masajes")}
+          class="mt-9 inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-bright"
+        >
+          Conocer los masajes
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div
+        class="relative mx-2 sm:mx-0"
+        data-reveal="right"
+        style="--reveal-delay: 120ms"
+      >
+        <div
+          class="absolute -inset-3 rounded-[2rem] border border-gold/20"
+          aria-hidden="true"
+        ></div>
+        <Image
+          src={bienvenida}
+          alt="Sesión de masajes en Hernán Masajes"
+          class="relative aspect-[4/5] w-full rounded-[1.6rem] object-cover"
+        />
+        <div class="absolute -bottom-6 left-4 max-w-[15rem] rounded-2xl border border-white/10 bg-charcoal/95 p-5 shadow-2xl shadow-black/50 backdrop-blur sm:left-8">
+          <p class="font-display text-2xl leading-tight text-cream">
+            Un ritual para bajar el ritmo.
+          </p>
+          <p class="mt-2 text-[10px] uppercase tracking-[0.22em] text-gold">
+            Masajes · Cuerpo · Estética
+          </p>
+        </div>
+      </div>
     </div>
-</div>
-
-<style>
-    .fondo-foto{
-        background-image: url(/src/img/fondo-bienvenida.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        height: 450px;
-        
-    }
-    .negri{
-        background-color: rgba(0, 0, 0, 0.596);
-        height: 450px;
-        
-    }
-    .linea{
-        border-radius: 25px;
-        width: 50%;
-        margin: auto
-    }
-</style>
+  </div>
+</section>

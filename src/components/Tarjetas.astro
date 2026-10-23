@@ -1,143 +1,56 @@
 ---
+import { Image } from "astro:assets";
 import type { ListaMasaje } from "../lib/masajes";
-import MyApp from "../components/Ej";
+import Acordeon from "../components/Acordeon.astro";
 import { waLink } from "../lib/contacto";
+
 interface Props {
-    listamasajes: ListaMasaje;
+  listamasajes: ListaMasaje;
 }
 
 const { listamasajes } = Astro.props;
-const {
-    title,
-    clase,
-    clase2,
-    clase3,
-    especificaciones,
-    contenido1,
-    contenido2,
-    contenido3,
-    descripcion1,
-    descripcion2,
-    descripcion3,
-    id,
-} = listamasajes;
-
-// const fotito = `url(/src/img/${fondo})`;
+const { title, especificaciones, items, fondo } = listamasajes;
 ---
 
-<div class="foto w-11/12 lg:w-8/12 m-auto fondotarjeta" >
-    <div class="text-center text-white m-auto mt-5 negri w-[100%]">
-        <div class="bg-title">
-            <h2 class="text-start ps-3 font-bold text-xl pb-1">{title}:</h2>
-            <p class="w-[85%] m-auto font-bolder">{especificaciones}</p>
-        </div>
+<article
+  data-reveal
+  class="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-charcoal transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_24px_60px_-24px_rgba(201,168,106,0.25)]"
+>
+  <div class="relative h-44 overflow-hidden sm:h-48">
+    <Image
+      src={fondo}
+      alt=""
+      class="h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-105 group-hover:opacity-100"
+      aria-hidden="true"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent"
+      aria-hidden="true"
+    ></div>
+    <span
+      class="absolute top-5 left-5 h-px w-10 bg-gold/70"
+      aria-hidden="true"
+    ></span>
+  </div>
 
-        <MyApp id=`${id}` client:idle>
-            <button id=`btn1${id}` slot="boton" class={clase}>{contenido1}</button>
+  <div class="flex flex-1 flex-col px-6 pt-2 pb-6">
+    <h2 class="text-3xl leading-[1.05] text-cream">{title}</h2>
+    <p class="mt-3 text-sm leading-relaxed text-muted">{especificaciones}</p>
 
-            <p class="d-none" id=`texto1${id}` slot="texto" >{descripcion1}</p>
+    {items.length > 0 && (
+      <div class="mt-5 border-t border-white/10 pt-1">
+        <Acordeon items={items} />
+      </div>
+    )}
 
-            <button id=`btn2${id}` slot="boton2" class={clase2}>{contenido2}</button>
-    
-            <p id=`texto2${id}`  slot="texto2" class="d-none bg-slate-800/60 w-[80%] m-auto">
-                {descripcion2}
-            </p>
-            <button id=`btn3${id}` slot="boton3" class={clase3}>{contenido3}</button>
-    
-            <p slot="texto3" class="d-none bg-slate-800/60 w-[80%] m-auto pb-3" id=`texto3${id}`>
-                {descripcion3}
-            </p>
-        </MyApp>
-
-
-
-        <button class="w-[60%] lg:w-1/4 btn-contacto shadow-black"><a target="_blank" rel="noopener noreferrer" href={waLink("Quisiera solicitar un turno para masajes")}>Solicita tu turno aquí</a></button>
-    </div>
-
-    <style>
-        .foto {
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            border-radius: 5px;
-        }
-        .negri {
-            background-color: rgba(0, 0, 0, 0.438);
-        }
-        .btn-per {
-            width: 80%;
-            border-radius: 5px;
-            border: 1.5px solid;
-            border-color: rgba(247, 189, 86, 1);
-            margin-top: 15px;
-            margin-bottom: 15px;
-            
-        }
-        .btn-contacto {
-            border-radius: 5px;
-            background-color: rgba(247, 189, 86, 1);
-            border: 1.5px solid;
-            border-color: rgb(224, 199, 58);
-            margin-top: 15px;
-            margin-bottom: 15px;
-
-            &&:hover {
-                background-color: #f39308;
-                transition: 200ms;
-            }
-        }
-        .bg-title {
-            background-color: rgba(79, 79, 79, 0.517);
-            border-radius: 5px 5px 0px 0px;
-
-        }
-        .d-block {
-            width: 80%;
-            background-color:#f39308;
-            margin: auto;
-            border-radius: 10px;
-            animation: slideDown 0.3s forwards;
-        }
-        .d-none {
-            display: none;
-            /* animation: slideUp .5s ; */
-        }
-        .hidden-css {
-            width: 80%;
-            background-color: rgba(247, 189, 86, 1);
-            margin: auto;
-            border-radius: 10px;
-            animation: slideUp 0.3s forwards;
-        }
-        .fondotarjeta{
-            background-image:url(../img/tarjeta1.webp);
-        }
-
-        @keyframes slideDown {
-            0% {
-                height: 0%;
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0px);
-                height: 100%;
-            }
-        }
-
-        @keyframes slideUp {
-            0% {
-                height: 100%;
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-30px);
-                opacity: 0;
-                display: none;
-            }
-        }
-    </style>
-
-</div>
+    <a
+      href={waLink(`Hola, quisiera solicitar un turno para ${title}`)}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-auto inline-flex items-center gap-2 pt-6 text-xs font-semibold uppercase tracking-[0.18em] text-gold transition-colors hover:text-gold-bright"
+    >
+      Reservar este masaje
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</article>

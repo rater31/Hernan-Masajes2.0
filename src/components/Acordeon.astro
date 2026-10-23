@@ -1,0 +1,47 @@
+---
+interface AcordeonItem {
+  titulo: string;
+  descripcion: string;
+}
+
+interface Props {
+  items: AcordeonItem[];
+}
+
+const { items } = Astro.props;
+const visibles = items.filter(
+  (item) => item.titulo.trim() || item.descripcion.trim(),
+);
+---
+
+{visibles.length > 0 && (
+  <div class="divide-y divide-white/10">
+    {visibles.map((item) => (
+      <details class="acordeon-item group">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-3 text-left text-sm text-cream/85 transition-colors hover:text-gold">
+          <span>{item.titulo}</span>
+          <span
+            class="relative grid size-5 shrink-0 place-items-center rounded-full border border-gold/30 text-gold"
+            aria-hidden="true"
+          >
+            <span class="absolute h-px w-2.5 bg-current" />
+            <span class="absolute h-2.5 w-px bg-current transition-transform duration-200 group-open:rotate-90" />
+          </span>
+        </summary>
+        {item.descripcion && (
+          <div class="acordeon-body overflow-hidden">
+            <p class="pb-4 pr-8 text-sm leading-relaxed text-muted">
+              {item.descripcion}
+            </p>
+          </div>
+        )}
+      </details>
+    ))}
+  </div>
+)}
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

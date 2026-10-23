@@ -1,108 +1,95 @@
 ---
-import { waLink } from '../lib/contacto'
+import { Image } from "astro:assets";
+import cuerpoImg from "../img/cuidado2.webp";
+import detalleImg from "../img/cuidado.webp";
+import { waLink } from "../lib/contacto";
+
+const actividades = [
+  {
+    numero: "01",
+    titulo: "Estiramientos",
+    descripcion:
+      "Mejoran la movilidad, liberan tensiones acumuladas y devuelven elasticidad al cuerpo.",
+  },
+  {
+    numero: "02",
+    titulo: "Ejercicios funcionales",
+    descripcion:
+      "Trabajo consciente para fortalecer, estabilizar y acompañar el movimiento diario.",
+  },
+  {
+    numero: "03",
+    titulo: "Esferodinamia",
+    descripcion:
+      "Movilidad, equilibrio y relajación sobre esferas, con atención en la respiración.",
+  },
+];
 ---
 
+<section class="py-16 lg:py-24">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <div class="grid gap-12 lg:grid-cols-[0.9fr_1fr] lg:items-center lg:gap-20">
+      <div class="relative" data-reveal="left">
+        <Image
+          src={cuerpoImg}
+          alt="Estiramientos y ejercicio funcional para el cuidado del cuerpo"
+          class="aspect-[4/5] w-full rounded-3xl object-cover"
+        />
+        <div
+          class="pointer-events-none absolute inset-0 rounded-3xl border border-white/10"
+          aria-hidden="true"
+        ></div>
+        <div class="absolute -right-4 -bottom-8 hidden w-44 overflow-hidden rounded-2xl border-4 border-ink shadow-2xl shadow-black/50 sm:block lg:w-48">
+          <Image
+            src={detalleImg}
+            alt="Detalle de una sesión de cuidado corporal"
+            class="aspect-[4/3] w-full object-cover"
+          />
+        </div>
+      </div>
 
-<div class="w-[90%] bg-slate-500 m-auto text-center my-10 text-white foto">
-    <div class="negri">
-        <div class="bg-title ">
-            <h2 class="text-2xl ps-4 text-start bg-title ">Cuidado Corporal</h2>
-            <p class="text-md lg:text-lg">Cuidemos el cuerpo con estiramientos, ejercicios funcionales y esferodinamia, actividades que ayudan también a la relajación de la mente y cuerpo</p>
-        </div> 
-    
-        <button class="w-[60%] lg:w-1/4 btn-contacto shadow-black "><a target="_blank" rel="noopener noreferrer" href={waLink("Quisiera solicitar un turno para Cuidado Corporal")}>Solicita tu turno aquí</a></button>
+      <div data-reveal="right" style="--reveal-delay: 120ms">
+        <p class="text-xs uppercase tracking-[0.32em] text-gold">
+          Cuidado corporal
+        </p>
+        <h2 class="mt-5 max-w-xl text-4xl leading-[1.02] text-cream sm:text-5xl">
+          Moverte mejor,
+          <span class="italic text-gold"> sentirte mejor.</span>
+        </h2>
+        <p class="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+          Cuidemos el cuerpo con estiramientos, ejercicios funcionales y
+          esferodinamia, actividades que también ayudan a la relajación de la
+          mente y el cuerpo.
+        </p>
+
+        <ul class="mt-8 divide-y divide-white/10 border-y border-white/10">
+          {actividades.map((actividad) => (
+            <li class="flex gap-5 py-4">
+              <span class="pt-0.5 font-display text-sm text-gold">
+                {actividad.numero}
+              </span>
+              <div>
+                <h3 class="text-sm font-semibold tracking-wide text-cream">
+                  {actividad.titulo}
+                </h3>
+                <p class="mt-1 text-sm leading-relaxed text-muted">
+                  {actividad.descripcion}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={waLink("Hola, quisiera consultar por cuidado corporal")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-9 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-bright"
+        >
+          Consultar por WhatsApp
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
     </div>
-
-</div>
-
-
-
-<style>
-        .foto {
-            background-image: url(../img/cuidado2.webp);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            border-radius: 5px;
-        }
-        .negri {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-        .btn-per {
-            width: 60%;
-            border-radius: 5px;
-            border: 1.5px solid;
-            border-color: rgba(247, 189, 86, 1);
-            margin-top: 15px;
-            margin-bottom: 15px;
-
-            /* &&:hover{
-        animation: slideDown .3s forwards ;
-        
-    } */
-        }
-        .btn-contacto {
-            
-            border-radius: 5px;
-            background-color: rgba(247, 189, 86, 1);
-            border: 1.5px solid;
-            border-color: rgb(224, 199, 58);
-            margin-top: 15px;
-            margin-bottom: 15px;
-
-            &&:hover {
-                background-color: #f39308;
-                transition: 200ms;
-            }
-        }
-        .bg-title {
-            background-color: rgba(79, 79, 79, 0.517);
-            
-
-            border-radius: 5px 5px 0px 0px;
-        }
-        .d-block {
-            width: 60%;
-            background-color:#f39308;
-            margin: auto;
-            border-radius: 10px;
-            animation: slideDown 0.3s forwards;
-        }
-        .d-none {
-            display: none;
-            /* animation: slideUp .5s ; */
-        }
-        .hidden-css {
-            width: 80%;
-            background-color: rgba(247, 189, 86, 1);
-            margin: auto;
-            border-radius: 10px;
-            animation: slideUp 0.3s forwards;
-        }
-
-        @keyframes slideDown {
-            0% {
-                height: 0%;
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0px);
-                height: 100%;
-            }
-        }
-
-        @keyframes slideUp {
-            0% {
-                height: 100%;
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-30px);
-                opacity: 0;
-                display: none;
-            }
-        }
-</style>
+  </div>
+</section>

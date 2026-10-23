@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { withBase } from "../lib/navegacion";
+import { waLink } from "../lib/contacto";
+---
+
+<Layout
+  title="Página no encontrada | Hernán Masajes"
+  description="La página que buscás no existe. Volvé al inicio o contactanos por WhatsApp."
+>
+  <section class="flex min-h-[60vh] items-center py-20">
+    <div class="mx-auto max-w-2xl px-5 text-center">
+      <p class="gold-text font-display text-7xl leading-none sm:text-8xl">
+        404
+      </p>
+      <h1 class="mt-5 text-4xl text-cream sm:text-5xl">
+        Esta página no existe.
+      </h1>
+      <p class="mx-auto mt-4 max-w-md text-sm leading-relaxed text-muted">
+        Puede que el enlace haya cambiado o que la página ya no esté disponible.
+        Volvé al inicio o escribinos y te ayudamos.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <a
+          href={withBase("/")}
+          class="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-bright"
+        >
+          Volver al inicio
+        </a>
+        <a
+          href={waLink("Hola, necesito ayuda con el sitio")}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-cream transition-colors hover:border-gold/60 hover:text-gold"
+        >
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
