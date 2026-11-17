@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import foto1 from "../img/gabinete-completo.jpeg";
+import video from "../img/video.mp4";
 import foto2 from "../img/gabinete1-nuevo.webp";
 import foto3 from "../img/gabinete3-nuevo.webp";
 import { waLink } from "../lib/contacto";
 
 const imagenes = [
   {
-    src: foto1,
+    video,
     alt: "Interior del espacio de Hernán Masajes",
     clase: "col-span-6 aspect-[4/5] lg:col-span-5",
     delay: "0ms",
@@ -57,11 +57,24 @@ const imagenes = [
           data-reveal="scale"
           style={`--reveal-delay: ${imagen.delay}`}
         >
-          <Image
-            src={imagen.src}
-            alt={imagen.alt}
-            class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-          />
+          {imagen.video ? (
+            <video
+              src={imagen.video}
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label={imagen.alt}
+              class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+            />
+          ) : (
+            <Image
+              src={imagen.src!}
+              alt={imagen.alt}
+              class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+            />
+          )}
           <div
             class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100"
             aria-hidden="true"
